@@ -1,0 +1,49 @@
+---
+title: "Homework#2"
+author: "Osman MANTICI - 150117505"
+date: "21 Mayýs 2019"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+load(file.choose())
+Matrix=as.matrix(ex0717)
+
+library(lattice)
+##A)
+sprintf("A-)")
+histogram(Matrix, main="Sampling Distribution", right = FALSE, xlab="Population" )
+sprintf("Shape of the distribution seems skewed left ")
+
+##B)
+
+sprintf("B-)")
+calculated_mean<-mean(Matrix)
+sprintf("Calculated mean:")
+calculated_mean
+
+standard_dev<-sd(Matrix)
+sprintf("Calculated standard deviation")
+standard_dev
+
+##C)
+square_ten<-sqrt(10)
+theoretical_sd<-(2.15)/square_ten
+sprintf("c-)")
+sprintf("Theoretical standard deviation:")
+theoretical_sd
+
+sprintf("The means are nearly equal, there is no differences between them.")
+
+sprintf("The shape of the histogram is skewed right. The sample size is less than 30(sample size is 10) therefore it is not possible to approximately normal distribution. This small size cause to be a difference between theoretical and calculated standard deviation")
+
+
+```
